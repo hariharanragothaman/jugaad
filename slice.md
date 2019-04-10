@@ -24,17 +24,16 @@ a[1::-1]   # the first two items, reversed
 a[:-3:-1]  # the last two items, reversed
 a[-3::-1]  # everything except the last two items, reversed
 ```
-Python is kind to the programmer if there are fewer items than you ask for. For example, if you ask for a[:-2] and a only contains one element, you get an empty list instead of an error. Sometimes you would prefer the error, so you have to be aware that this may happen.
+Python is kind to the programmer if there are fewer items than you ask for. 
+For example, if you ask for a[:-2] and a only contains one element, you get an empty list instead of an error.
+Sometimes you would prefer the error, so you have to be aware that this may happen.
+
 Relation to slice() object
 
 The slicing operator [] is actually being used in the above code with a slice() object using the : notation (which is only valid within []), i.e.:
 
-a[start:stop:step]
+`a[start:stop:step]` is equivalent to: `a[slice(start, stop, step)]`
 
-is equivalent to:
-
-a[slice(start, stop, step)]
-
-Slice objects also behave slightly differently depending on the number of arguments, similarly to range(), i.e. both slice(stop) and slice(start, stop[, step]) are supported. To skip specifying a given argument, one might use None, so that e.g. a[start:] is equivalent to a[slice(start, None)] or a[::-1] is equivalent to a[slice(None, None, -1)].
+Slice objects also behave slightly differently depending on the number of arguments, similarly to range(), i.e. both slice(stop) and `slice(start, stop[, step])` are supported. To skip specifying a given argument, one might use None, so that e.g. `a[start:] `is equivalent to `a[slice(start, None)]` or `a[::-1]` is equivalent to `a[slice(None, None, -1)]`.
 
 While the :-based notation is very helpful for simple slicing, the explicit use of slice() objects simplifies the programmatic generation of slicing.
