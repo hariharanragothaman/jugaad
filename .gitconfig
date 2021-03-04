@@ -10,6 +10,7 @@
 	fe = fetch --tags -f
 	fa = fe --all
 	cl = clone --recursive
+	bo = for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n
 	#bs = switch --recurse-submodules
 	bs = switch
 	bsd = bs --detach
