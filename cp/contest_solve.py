@@ -8,15 +8,21 @@ start_time = time.time()
 
 
 def solve(a, b):
-	# The actual solution begins here
+	"""
+	The actual solution begins here
 	c = a + b
 	print(c)
+	"""
+	pass
+
 
 def main():
-	# Main function dedicated to get the I/P
+	"""
+	Main function dedicated to get the I/P
 	a, b = map(int, input().split())
 	solve(a, b)
-
+	"""
+	pass
 
 if __name__ == '__main__':
 	# ONLINE_JUDGE = __debug__
