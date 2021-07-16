@@ -3,6 +3,7 @@
 #define CPPMASTER_HEADERS_H
 
 #include <iostream>
+#include <fstream>
 #pragma GCC optimize("Ofast")
 #include <algorithm>
 
