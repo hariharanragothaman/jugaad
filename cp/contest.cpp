@@ -82,8 +82,8 @@ function calls are not free
 */
 
 
-/* IF ONLINE_JUDGE Comment these */
-#define ONLINE_JUDGE
+
+#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
 
 #ifndef ONLINE_JUDGE
 ifstream  i_data("data.in");
