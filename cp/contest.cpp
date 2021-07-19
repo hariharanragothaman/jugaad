@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 /* BEGIN HEADER FILES AND OTHER OPTIZATIONS */
 #pragma GCC optimize("Ofast")
 
@@ -16,7 +13,7 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+using namespace std;
 
 // For Hash
 #include <functional>
@@ -60,7 +57,7 @@ typedef pair<ll, ll> pll;
 // begin deepsigh
 #define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
 #define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
-static const int ENABLEFASTIO = []() { std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr); return 0; }();
+//static const int ENABLEFASTIO = []() { std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr); return 0; }();
 // end deepsigh
 
 // BEGIN NO SAD
@@ -86,16 +83,23 @@ function calls are not free
 
 
 /* IF ONLINE_JUDGE Comment these */
+#define ONLINE_JUDGE
 
+#ifndef ONLINE_JUDGE
 ifstream  i_data("data.in");
 ofstream  o_data("data.out");
-
 #define cin  i_data
 #define cout o_data
+#else
+#endif
 
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
 	int a, b;
 	cin >> a >> b;
 	cout << a + b << endl;
