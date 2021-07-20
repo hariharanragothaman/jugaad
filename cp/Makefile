@@ -27,8 +27,8 @@ default: build
 
 .PHONY: build
 build:
-	g++ $(CXX_FLAGS) contest.cpp -o contest
+	g++ $(CXX_FLAGS) ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME}
 
 .PHONY: run
 run:
-	g++ $(CXX_FLAGS) contest.cpp -o contest && ./contest
+	g++ $(CXX_FLAGS) ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME} && ./${PROBLEM_NAME}
