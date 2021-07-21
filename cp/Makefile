@@ -4,7 +4,7 @@
 # |                    |
 # +--------------------+
 
-PROBLEM_NAME := problem_name
+PROBLEM_NAME := contest
 DEBUG := true
 LANG := cpp
 
@@ -27,8 +27,8 @@ default: build
 
 .PHONY: build
 build:
-	g++ $(CXX_FLAGS) ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME}
+	g++ ${CXXFLAGS} ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME}
 
 .PHONY: run
 run:
-	g++ $(CXX_FLAGS) ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME} && ./${PROBLEM_NAME}
+	g++ ${CXXFLAGS} -o ${PROBLEM_NAME} && ./${PROBLEM_NAME}
