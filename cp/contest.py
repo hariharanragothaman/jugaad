@@ -28,10 +28,10 @@ def main():
 
 if __name__ == "__main__":
     # ONLINE_JUDGE = __debug__
-    ONLINE_JUDGE = False
+    LOCAL = False
 
     # If it's Local - Get I/P from file
-    if not ONLINE_JUDGE:
+    if LOCAL:
         sys.stdin = open("data.in", "r")
         sys.stdout = open("data.out", "w")
 
@@ -40,6 +40,6 @@ if __name__ == "__main__":
         main()
 
     # If it's local - Print this O/P
-    if not ONLINE_JUDGE:
+    if LOCAL:
         print(f"Time Elapsed: {time.time() - start_time} seconds")
         sys.stdout.close()
