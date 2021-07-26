@@ -2,15 +2,10 @@ import os
 import sys
 from io import BytesIO, IOBase
 
-_str = str
-str = lambda x=b"": x if type(x) is bytes else _str(x).encode()
+
+# region fastio
 
 BUFSIZE = 8192
-
-from collections import deque, Counter, OrderedDict
-from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
-from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
-from bisect import bisect_left, bisect_right
 
 
 class FastIO(IOBase):
@@ -57,89 +52,26 @@ class IOWrapper(IOBase):
         self.readline = lambda: self.buffer.readline().decode("ascii")
 
 
-if "PyPy" in sys.version:
-    from _continuation import continulet
+def print(*args, **kwargs):
+    """Prints the values to a stream, or to sys.stdout by default."""
+    sep, file = kwargs.pop("sep", " "), kwargs.pop("file", sys.stdout)
+    at_start = True
+    for x in args:
+        if not at_start:
+            file.write(sep)
+        file.write(str(x))
+        at_start = False
+    file.write(kwargs.pop("end", "\n"))
+    if kwargs.pop("flush", False):
+        file.flush()
+
+
+if sys.version_info[0] < 3:
+    sys.stdin, sys.stdout = FastIO(sys.stdin), FastIO(sys.stdout)
 else:
-    import threading
+    sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
+
+input = lambda: sys.stdin.readline().rstrip("\r\n")
 
 
-def binNumber(n, size=4):
-    return bin(n)[2:].zfill(size)
-
-
-def iar():
-    return list(map(int, input().split()))
-
-
-def ini():
-    return int(input())
-
-
-def isp():
-    return map(int, input().split())
-
-
-def sti():
-    return str(input())
-
-
-def par(a):
-    print(" ".join(list(map(str, a))))
-
-
-def tdl(outerListSize, innerListSize, defaultValue=0):
-    return [[defaultValue] * innerListSize for i in range(outerListSize)]
-
-
-def sts(s):
-    s = list(s)
-    s.sort()
-    return "".join(s)
-
-
-def bis(a, x):
-    i = bisect_left(a, x)
-    if i != len(a) and a[i] == x:
-        return [i, True]
-    else:
-        return [-1, False]
-
-
-class pair:
-    def __init__(self, f, s):
-        self.fi = f
-        self.se = s
-
-    def __lt__(self, other):
-        return (self.fi, self.se) < (other.fi, other.se)
-
-
-# ACTUAL CODE after getting Input is here
-def main():
-    input = lambda: sys.stdin.readline().rstrip("\r\n")
-    values = input().split()
-    print(*values)
-
-
-if __name__ == "__main__":
-    if "PyPy" in sys.version:
-
-        def bootstrap(cont):
-            call, arg = cont.switch()
-            while True:
-                call, arg = cont.switch(
-                    to=continulet(lambda _, f, args: f(*args), call, arg)
-                )
-
-        cont = continulet(bootstrap)
-        cont.switch()
-
-        main()
-
-    else:
-        sys.setrecursionlimit(1 << 30)
-        threading.stack_size(1 << 27)
-
-        main_thread = threading.Thread(target=main)
-        main_thread.start()
-        main_thread.join()
+# END FASTIO
