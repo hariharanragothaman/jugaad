@@ -57,7 +57,7 @@ typedef pair<ll, ll> pll;
 // begin deepsigh
 #define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
 #define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
-//static const int ENABLEFASTIO = []() { std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr); return 0; }();
+#define ENABLEFASTIO() std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr)
 // end deepsigh
 
 // BEGIN NO SAD
@@ -96,10 +96,7 @@ ofstream  o_data("data.out");
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-
+    ENABLEFASTIO();
 	int a, b;
 	cin >> a >> b;
 	cout << a + b << endl;
