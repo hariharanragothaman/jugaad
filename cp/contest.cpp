@@ -1,6 +1,7 @@
 /* BEGIN HEADER FILES AND OTHER OPTIZATIONS */
 #pragma GCC optimize("Ofast")
-
+#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("inline")
 #include <iostream>
 #include <fstream>
 #include <algorithm>
