@@ -10,6 +10,7 @@
 */
 
 
+// GCC Optimizations
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC optimize("inline")
@@ -45,12 +46,12 @@ using namespace std;
 #include <unordered_map>
 #include <unordered_set>
 
-
 // Some basic typedef's for comfort
-typedef vector<int> vi;
 typedef long long ll;
+typedef vector<int> vi;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
+typedef vector<pii> vii;
 
 // #defines for bounds comfort
 #define double long double
@@ -66,8 +67,32 @@ typedef pair<ll, ll> pll;
 #define lb lower_bound
 #define ub upper_bound
 
+// Debugging related comforts
 #define debug(x) cout << #x << " is " << x << endl
+#define  mset(a,x)      memset(a,x,sizeof(a))
+#define  debv(a)        for(auto it: a)cout<<it<<" ";newl;
+#define  deb1(a)        cout<<a<<"\n";
+#define  deb2(a,b)      cout<<a<<" "<<b<<"\n";
+#define  deb3(a,b,c)    cout<<a<<" "<<b<<" "<<c<<"\n";
+#define  deb4(a,b,c,d)  cout<<a<<" "<<b<<" "<<c<<" "<<d<<"\n";
 
+// GODSPEED
+#define ENABLEFASTIO() std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr)
+
+// MIN-MAX Customizations
+#define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
+#define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
+
+// Traversal related Comforts
+#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define trav(a, x) for(auto& a : x)
+#define all(x) x.begin(), x.end()
+#define sz(x) (int)(x).size()
+#define  uniq(a)  a.resize(unique(a.begin(), a.end()) - a.begin());
+
+
+/**********************************************************************************************************************/
+/*********************************************FREQUENTLY USED SUBROUTINES *********************************************/
 vector<int> sieve(int n)
 {
     int*arr = new int[n + 1]();
@@ -134,17 +159,9 @@ ll combination(ll n, ll r, ll m, ll* fact) {
     return ((val1 * val2) % m * val3) % m;
 }
 
-#define ENABLEFASTIO() std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr)
-#define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
-#define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
 
-// BEGIN NO SAD
-#define rep(i, a, b) for(int i = a; i < (b); ++i)
-#define trav(a, x) for(auto& a : x)
-#define all(x) x.begin(), x.end()
-#define sz(x) (int)(x).size()
-// END NO SAD
-
+/********************************************END OF CUSTOMIZATIONS*****************************************************/
+/**********************************************************************************************************************/
 
 #define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
 
@@ -163,10 +180,7 @@ void solve()
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-
+    ENABLEFASTIO();
     int T;
     cin>>T;
     while(T--) solve();
