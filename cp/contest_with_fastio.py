@@ -1,20 +1,15 @@
-import sys, math, cmath, time, collections
+# NECESSARY IMPORTS
+import os, sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
 from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
 from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
-
-# BEGIN FASTIO
-
-import os
-import sys
+from itertools import accumulate, permutations, combinations, combinations_with_replacement
 from io import BytesIO, IOBase
 
 
-# region fastio
-
+# FASTIO REGION
 BUFSIZE = 8192
-
 
 class FastIO(IOBase):
     newlines = 0
@@ -82,9 +77,9 @@ else:
 input = lambda: sys.stdin.readline().rstrip("\r\n")
 
 
-# END FASTIO
+# FASTIO REGION ENDS
 
-# SOLUTION BEGINS HERE
+############################### SOLUTION BEGINS HERE ######################################
 
 start_time = time.time()
 
@@ -104,6 +99,8 @@ def main():
     """
     pass
 
+
+############################### SOLUTION ENDS HERE #########################################
 
 if __name__ == "__main__":
     LOCAL = True
