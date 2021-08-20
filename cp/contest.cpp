@@ -90,6 +90,16 @@ typedef vector<pii> vii;
 #define sz(x) (int)(x).size()
 #define  uniq(a)  a.resize(unique(a.begin(), a.end()) - a.begin());
 
+// Other Customizations
+#define present(container, element) (container.find(element) != container.end())
+#define cpresent(container, element) (find(all(container), element) != container.end())
+
+// Templates
+template < typename T1, typename T2 > struct pair {
+    T1 first;
+    T2 second;
+};
+
 
 /**********************************************************************************************************************/
 /*********************************************FREQUENTLY USED SUBROUTINES *********************************************/
