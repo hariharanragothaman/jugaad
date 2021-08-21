@@ -1,3 +1,7 @@
+"""
+Use FastIO only when necessary
+"""
+
 # NECESSARY IMPORTS
 import os, sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
