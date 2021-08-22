@@ -4,6 +4,11 @@ from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
 from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
 
+# SOME GENERAL HELPER
+def input_as_array():
+    return list(map(int, input().split()))
+
+
 start_time = time.time()
 
 

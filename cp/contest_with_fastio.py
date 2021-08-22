@@ -83,6 +83,11 @@ input = lambda: sys.stdin.readline().rstrip("\r\n")
 
 # FASTIO REGION ENDS
 
+# SOME GENERAL HELPER
+def input_as_array():
+    return list(map(int, input().split()))
+
+
 ############################### SOLUTION BEGINS HERE ######################################
 
 start_time = time.time()
