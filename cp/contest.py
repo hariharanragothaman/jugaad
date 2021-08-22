@@ -1,10 +1,22 @@
-import sys, math, cmath, time, collections
+import os, sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
 from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
 from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
+from io import BytesIO, IOBase
+from functools import reduce
+
 
 # SOME GENERAL HELPER
+def factors(n):
+    return set(
+        reduce(
+            list.__add__,
+            ([i, n // i] for i in range(1, int(n ** 0.5) + 1) if n % i == 0),
+        )
+    )
+
+
 def input_as_array():
     return list(map(int, input().split()))
 
