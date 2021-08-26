@@ -27,8 +27,8 @@ default: build
 
 .PHONY: build
 build:
-	g++ ${CXXFLAGS} ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME}
+	g++-11 ${CXXFLAGS} ${PROBLEM_NAME}.cpp -o ${PROBLEM_NAME}
 
 .PHONY: run
-run:
-	g++ ${CXXFLAGS} -o ${PROBLEM_NAME} && ./${PROBLEM_NAME}
+run: build
+	./${PROBLEM_NAME}
