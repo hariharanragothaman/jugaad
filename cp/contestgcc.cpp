@@ -146,7 +146,7 @@ ll combination(ll n, ll r, ll m, ll* fact) {
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
-//#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
+#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
 
 #ifndef ONLINE_JUDGE
 ifstream  i_data("../io/data.in");
