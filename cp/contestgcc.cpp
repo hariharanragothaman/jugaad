@@ -146,7 +146,7 @@ ll combination(ll n, ll r, ll m, ll* fact) {
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
-#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
+//#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
 
 #ifndef ONLINE_JUDGE
 ifstream  i_data("../io/data.in");
@@ -167,6 +167,7 @@ int main()
     int T;
     cin>>T;
     while(T--) solve();
+    cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl;
     return 0;
 
 }
