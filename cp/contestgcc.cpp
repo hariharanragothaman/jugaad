@@ -142,6 +142,10 @@ ll combination(ll n, ll r, ll m, ll* fact) {
     return ((val1 * val2) % m * val3) % m;
 }
 
+bool sortBySecond(const pair<int,int> &a, const pair<int,int> &b)
+{
+    return (a.second < b.second);
+}
 
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
