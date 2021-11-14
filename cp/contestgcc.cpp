@@ -152,14 +152,15 @@ bool sortBySecond(const std::pair<int,int> &a, const std::pair<int,int> &b)
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
-#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
+#define LOCAL   // If ONLINE JUDGE comment this line.
 
-#ifndef ONLINE_JUDGE
+#ifdef LOCAL
 ifstream  i_data("../io/data.in");
 ofstream  o_data("../io/data.out");
 #define cin  i_data
 #define cout o_data
 #else
+// Submit to Online Judge
 #endif
 
 void solve()
