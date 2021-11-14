@@ -19,7 +19,8 @@
 using namespace std;
 using namespace chrono;
 
-
+#define endl "\n"
+#define int long long
 
 // Some basic typedef's for comfort
 typedef long long ll;
@@ -166,17 +167,12 @@ void solve()
 
 }
 
-int main()
+int32_t main()
 {
     ENABLEFASTIO();
     auto start1 = high_resolution_clock::now();
     int T;
     cin>>T;
     while(T--) solve();
-    auto stop1 = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop1 - start1);
-#ifndef ONLINE_JUDGE
-    cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl;
-#endif
     return 0;
 }
