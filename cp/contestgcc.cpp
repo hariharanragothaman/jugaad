@@ -19,7 +19,8 @@
 using namespace std;
 using namespace chrono;
 
-
+#define endl "\n"
+#define int long long
 
 // Some basic typedef's for comfort
 typedef long long ll;
@@ -170,14 +171,15 @@ std::vector<T> slices(std::vector<T> const &v, int m, int n)
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
-#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
+#define LOCAL   // If ONLINE JUDGE comment this line.
 
-#ifndef ONLINE_JUDGE
+#ifdef LOCAL
 ifstream  i_data("../io/data.in");
 ofstream  o_data("../io/data.out");
 #define cin  i_data
 #define cout o_data
 #else
+// Submit to Online Judge
 #endif
 
 void solve()
@@ -185,17 +187,12 @@ void solve()
 
 }
 
-int main()
+int32_t main()
 {
     ENABLEFASTIO();
     auto start1 = high_resolution_clock::now();
     int T;
     cin>>T;
     while(T--) solve();
-    auto stop1 = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop1 - start1);
-#ifndef ONLINE_JUDGE
-    cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl;
-#endif
     return 0;
 }
