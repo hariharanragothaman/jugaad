@@ -148,6 +148,25 @@ bool sortBySecond(const std::pair<int,int> &a, const std::pair<int,int> &b)
     return (a.second < b.second);
 }
 
+template<typename T>
+void print(std::vector<T> const &v)
+{
+    for (auto i: v)
+    {
+        std::cout << i << ' ';
+    }
+    std::cout << std::endl;
+}
+
+template<typename T>
+std::vector<T> slices(std::vector<T> const &v, int m, int n)
+{
+    auto first = v.cbegin() + m;
+    auto last = v.cbegin() + n + 1;
+    std::vector<T> vec(first, last);
+    return vec;
+}
+
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
