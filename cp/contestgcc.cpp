@@ -187,7 +187,7 @@ void print(std::vector<T> const &v)
     {
         std::cout << i << ' ';
     }
-    std::cout << std::endl;
+    std::cout << endl;
 }
 
 template<typename T>
