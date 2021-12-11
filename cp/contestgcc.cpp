@@ -15,7 +15,38 @@
 #pragma GCC optimize("unroll-loops")
 #pragma GCC optimize("inline")
 
-#include "bits/stdc++.h"
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <chrono>
+#include <cstring>
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+// For Hash
+#include <functional>
+
+// For all useful constants
+#include <climits>
+
+// Data-Structures and related stuff.
+#include <map>
+#include <set>
+#include <stack>
+#include <random>
+#include <deque>
+#include <queue>   // Includes Priority Queue
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
+
+
 using namespace std;
 using namespace chrono;
 
