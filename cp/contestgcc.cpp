@@ -101,6 +101,19 @@ typedef vector<pii> vii;
 #define present(container, element) (container.find(element) != container.end())
 #define cpresent(container, element) (find(all(container), element) != container.end())
 
+
+#define LOCAL   // If ONLINE JUDGE comment this line.
+
+#ifdef LOCAL
+ifstream  i_data("../io/data.in");
+ofstream  o_data("../io/data.out");
+#define cin  i_data
+#define cout o_data
+#else
+// Submit to Online Judge
+#endif
+
+
 // Templates
 template < typename T1, typename T2 > struct pair {
     T1 first;
@@ -185,9 +198,9 @@ void print(std::vector<T> const &v)
 {
     for (auto i: v)
     {
-        std::cout << i << ' ';
+        cout << i << ' ';
     }
-    std::cout << endl;
+    cout << endl;
 }
 
 template<typename T>
@@ -202,16 +215,6 @@ std::vector<T> slices(std::vector<T> const &v, int m, int n)
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 /**********************************************************************************************************************/
 
-#define LOCAL   // If ONLINE JUDGE comment this line.
-
-#ifdef LOCAL
-ifstream  i_data("../io/data.in");
-ofstream  o_data("../io/data.out");
-#define cin  i_data
-#define cout o_data
-#else
-// Submit to Online Judge
-#endif
 
 void solve()
 {
@@ -221,9 +224,7 @@ void solve()
 int32_t main()
 {
     ENABLEFASTIO();
-    auto start1 = high_resolution_clock::now();
-    int T;
-    cin>>T;
+    int T = 1;
     while(T--) solve();
     return 0;
 }
