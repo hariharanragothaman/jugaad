@@ -15,40 +15,22 @@
 #pragma GCC optimize("unroll-loops")
 #pragma GCC optimize("inline")
 
-
-#include <iostream>
-#include <fstream>
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-// For Hash
-#include <functional>
-
-// For all useful constants
-#include <climits>
-
-// Data-Structures and related stuff.
-#include <map>
-#include <set>
-#include <stack>
-#include <random>
-#include <deque>
-#include <queue>   // Includes Priority Queue
-#include <vector>
-#include <unordered_map>
-#include <unordered_set>
-
-
+#include "bits/stdc++.h"
 using namespace std;
-using namespace chrono;
+
+//#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/                                                     
+                                                                                                                        
+#ifndef ONLINE_JUDGE                                                                                                    
+ifstream  i_data("data.in");                                                                                            
+ofstream  o_data("data.out");                                                                                           
+#define cin  i_data                                                                                                     
+#define cout o_data                                                                                                     
+#else                                                                                                                   
+#endif 
+
+#define ENABLEFASTIO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+
+/**********************************************************************************************************************/
 
 #define endl "\n"
 #define int long long
@@ -83,9 +65,6 @@ typedef vector<pii> vii;
 #define  deb3(a,b,c)    cout<<a<<" "<<b<<" "<<c<<"\n";
 #define  deb4(a,b,c,d)  cout<<a<<" "<<b<<" "<<c<<" "<<d<<"\n";
 
-// GODSPEED
-#define ENABLEFASTIO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-
 // MIN-MAX Customizations
 #define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
 #define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
@@ -100,18 +79,7 @@ typedef vector<pii> vii;
 // Other Customizations
 #define present(container, element) (container.find(element) != container.end())
 #define cpresent(container, element) (find(all(container), element) != container.end())
-
-
-#define LOCAL   // If ONLINE JUDGE comment this line.
-
-#ifdef LOCAL
-ifstream  i_data("../io/data.in");
-ofstream  o_data("../io/data.out");
-#define cin  i_data
-#define cout o_data
-#else
-// Submit to Online Judge
-#endif
+   
 
 
 // Templates
@@ -120,7 +88,6 @@ template < typename T1, typename T2 > struct pair {
     T2 second;
 };
 
-/**********************************************************************************************************************/
 /*********************************************FREQUENTLY USED SUBROUTINES *********************************************/
 vector<int> sieve(int n)
 {
