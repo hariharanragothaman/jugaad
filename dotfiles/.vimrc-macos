@@ -1,0 +1,34 @@
+set backspace=indent,eol,start
+"set nu!                                                                                                                                                                    
+"set mouse=a
+set title
+set cursorline
+set encoding=utf-8 " Important to YCM
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_clangd_binary_path=trim(system('brew --prefix llvm')).'/bin/clangd'
+
+inoremap <expr><CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+let g:ycm_language_server =
+  \ [{
+  \   'name': 'ccls',
+  \   'cmdline': [ 'ccls' ],
+  \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp' ],
+  \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
+  \ }]
+
+call plug#begin('~/.vim/plugged')
+" Here will be only plugins
+
+" Sample initial plugin
+Plug 'terroo/vim-simple-emoji'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
+Plug 'ycm-core/YouCompleteMe'
+call plug#end()
+
+map <C-s> :write<CR>
