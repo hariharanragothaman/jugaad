@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : cppygod
 " Date              : 22.01.2022
-" Last Modified Date: 23.01.2022
+" Last Modified Date: 31.01.2022
 " Last Modified By  : cppygod
 set backspace=indent,eol,start
 "set nu!
@@ -29,6 +29,9 @@ let g:ycm_language_server =
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
   \ }]
 
+" Settings for UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 
 " Settings for header
 let g:header_field_author = 'cppygod'
@@ -50,10 +53,10 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 50
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 "colorscheme monokai
 
