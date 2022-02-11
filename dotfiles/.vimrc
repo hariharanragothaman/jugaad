@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : cppygod
 " Date              : 22.01.2022
-" Last Modified Date: 31.01.2022
+" Last Modified Date: 07.02.2022
 " Last Modified By  : cppygod
 set backspace=indent,eol,start
 "set nu!
@@ -46,6 +46,11 @@ nnoremap <C-d> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-q> :qa!<cr>"
 
+" Smart mapping for Ctrl+W
+
+" For opening terminal
+nmap <space>tt :below vertical terminal<CR>
+
 " Settings for netrw / NERDTREE - A Project Explorer of choice
 
 let g:netrw_banner = 0
@@ -53,12 +58,12 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 50
+
+
 "augroup ProjectDrawer
 "  autocmd!
 "  autocmd VimEnter * :Vexplore
 "augroup END
-
-"colorscheme monokai
 
 " PLUGIN INSTALLATIONS
 
