@@ -1,8 +1,9 @@
 " File              : .vimrc
 " Author            : cppygod
 " Date              : 22.01.2022
-" Last Modified Date: 07.02.2022
+" Last Modified Date: 12.02.2022
 " Last Modified By  : cppygod
+
 set backspace=indent,eol,start
 "set nu!
 "set mouse=a
@@ -10,6 +11,9 @@ set title
 set cursorline
 set encoding=utf-8 " Important to YCM
 set noswapfile
+
+" ColorScheme Selection
+colorscheme monokai
 
 " YCM Auto-Complete features
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
