@@ -1,62 +1,30 @@
-import os, sys, math, cmath, time, collections
+import os
+from io import BytesIO, IOBase
+import sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
 from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
 from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
-from io import BytesIO, IOBase
-from functools import reduce
+from itertools import permutations, combinations, combinations_with_replacement
 
 
 # SOME GENERAL HELPER
-def factors(n):
-    return set(
-        reduce(
-            list.__add__,
-            ([i, n // i] for i in range(1, int(n ** 0.5) + 1) if n % i == 0),
-        )
-    )
-
-
-def input_as_array():
-    return list(map(int, input().split()))
-
+def input_as_array(): return list(map(int, input().split()))
 
 start_time = time.time()
 
-
-def solve(a, b):
-    """
-    The actual solution begins here
-    c = a + b
-    print(c)
-    """
+def main():
     pass
 
-
-
-def main():
-    """
-    Main function dedicated to get the I/P
-    a, b = map(int, input().split())
-    solve(a, b)
-    """
-    a, b = map(int, input().split())
-    solve(a, b)
-
-
 if __name__ == "__main__":
-    LOCAL = False
-
-    # If it's Local - Get I/P from file
-    if LOCAL:
+    if os.path.exists('data.in'):
         sys.stdin = open("data.in", "r")
         sys.stdout = open("data.out", "w")
 
-    testcases = int(input())
+    testcases = 1
     for i in range(testcases):
         main()
 
-    # If it's local - Print this O/P
-    if LOCAL:
+    if os.path.exists('data.in'):
         print(f"Time Elapsed: {time.time() - start_time} seconds")
         sys.stdout.close()
