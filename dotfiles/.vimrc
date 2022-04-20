@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : cppygod
 " Date              : 22.01.2022
-" Last Modified Date: 12.02.2022
+" Last Modified Date: 20.04.2022
 " Last Modified By  : cppygod
 
 set backspace=indent,eol,start
@@ -11,7 +11,7 @@ set title
 set cursorline
 set encoding=utf-8 " Important to YCM
 set noswapfile
-
+set autoread
 " ColorScheme Selection
 colorscheme monokai
 
