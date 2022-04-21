@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# File              : bucket_full_of_candies.py
-# Author            : cppygod
-# Date              : 20.04.2022
-# Last Modified Date: 20.04.2022
-# Last Modified By  : cppygod
 
 import os, sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
