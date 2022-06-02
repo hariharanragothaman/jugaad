@@ -1,3 +1,6 @@
+"""
+செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
+"""
 
 import os, sys, math, cmath, time, collections
 from collections import deque, Counter, OrderedDict, defaultdict
@@ -10,8 +13,12 @@ from functools import reduce
 def input_as_array(): return list(map(int, input().split()))
 
 def debug():
-    if os.path.exists('data.in'):
-        print("**********************")
+    if os.path.exists("data.in"):
+        print("*" * 10)
+
+def debug3():
+    if os.path.exists("data.in"):
+        print("-" * 10)
 
 def debug2(value):
     if os.path.exists('data.in'):
