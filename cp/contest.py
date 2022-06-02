@@ -1,5 +1,6 @@
 """
 செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
+Focus, Determination and Sheer-Will
 """
 
 import os, sys, math, cmath, time, collections
