@@ -147,15 +147,13 @@ typedef vector<pii> vii;
 
 /**********************************************************************************************************************/
 
-// Traversal related Comforts
+// Sub-routine comforts
 
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
 #define trav(a, x) for(auto& a : x)
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x).size()
 #define  uniq(a)  a.resize(unique(a.begin(), a.end()) - a.begin());
-
-// Other Customizations
 #define present(container, element) (container.find(element) != container.end())
 #define cpresent(container, element) (find(all(container), element) != container.end())
    
@@ -163,12 +161,14 @@ typedef vector<pii> vii;
 /**********************************************************************************************************************/
 
 // Templates
+
 template < typename T1, typename T2 > struct pair {
     T1 first;
     T2 second;
 };
 
 /*********************************************FREQUENTLY USED SUBROUTINES *********************************************/
+
 vector<int> sieve(int n)
 {
     int*arr = new int[n + 1]();
@@ -182,25 +182,33 @@ vector<int> sieve(int n)
     return vect;
 }
 
-ll gcd(ll a, ll b) {
-    if (b > a) {
+ll gcd(ll a, ll b) 
+{
+    if (b > a) 
+    {
         return gcd(b, a);
     }
-    if (b == 0) {
+    if (b == 0) 
+    {
         return a;
     }
     return gcd(b, a % b);
 }
-ll expo(ll a, ll b, ll mod) {
+
+ll expo(ll a, ll b, ll mod) 
+{
     ll res = 1;
-    while (b > 0) {
+    while (b > 0) 
+    {
         if (b & 1)res = (res * a) % mod;
         a = (a * a) % mod;
         b = b >> 1;
     }
     return res;
 }
-void extendgcd(ll a, ll b, ll*v) {
+
+void extendgcd(ll a, ll b, ll*v) 
+{
     if (b == 0) {
         v[0] = 1;    //pass an arry of size 3
         v[1] = 0;
@@ -213,27 +221,17 @@ void extendgcd(ll a, ll b, ll*v) {
     v[0] = x;
     return;
 }
-ll mminv(ll a, ll b) {
-    ll arr[3];    //for non prime b
-    extendgcd(a, b, arr);
-    return arr[0];
-}
-ll mminvprime(ll a, ll b) {
-    return expo(a, b - 2, b);
-}
-bool revsort(ll a, ll b) {
+
+bool revsort(ll a, ll b) 
+{
     return a > b;
 }
-void swap(int &x, int &y) {
+
+void swap(int &x, int &y) 
+{
     int temp = x;
     x = y;
     y = temp;
-}
-ll combination(ll n, ll r, ll m, ll* fact) {
-    ll val1 = fact[n];
-    ll val2 = mminvprime(fact[r], m);
-    ll val3 = mminvprime(fact[n - r], m);
-    return ((val1 * val2) % m * val3) % m;
 }
 
 bool sortBySecond(const std::pair<int,int> &a, const std::pair<int,int> &b)
