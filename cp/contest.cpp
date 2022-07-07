@@ -1,21 +1,41 @@
 /*
-    Some General Advice
+    செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
+    Focus, Determination and Sheer-Will
+    The woods are lovely, dark and deep,   
+    But I have promises to keep,   
+    And miles to go before I sleep,   
+    And miles to go before I sleep.
+
+    -------------------------------------------------------------------------
     REMEMBER CLEAR GLOBAL STATE
     REMEMBER READ THE PROBLEM STATEMENT AND DON'T SOLVE A DIFFERENT PROBLEM
     remember hidden T factor of 1e2
-    read the bounds for stupid cases
-    did you restart your editor
-    pushing back vectors is garbage, pre-initialize them
-    function calls are not free
+    Read the bounds for stupid cases
+    Pushing back vectors is garbage, pre-initialize them
+    Function calls are not free
 */
 
 
-// GCC Optimizations
-#pragma GCC optimize("Ofast")
-#pragma GCC optimize("unroll-loops")
-#pragma GCC optimize("inline")
-
-#include "bits/stdc++.h"
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <queue>
+#include <ctime>
+#include <cassert>
+#include <complex>
+#include <string>
+#include <cstring>
+#include <chrono>
+#include <random>
+#include <bitset>
+#include <array>
 using namespace std;
 
 //#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/                                                     
