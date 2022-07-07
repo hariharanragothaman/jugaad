@@ -1,3 +1,10 @@
+/**
+ * File              : contest.cpp
+ * Author            : cppygod
+ * Date              : 07.07.2022
+ * Last Modified Date: 07.07.2022
+ * Last Modified By  : cppygod
+ */
 /*
     செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
     Focus, Determination and Sheer-Will
@@ -16,67 +23,119 @@
 */
 
 
-#include <iostream>
+
+#include <cctype>
+#include <cerrno>
+#include <cfloat>
+#include <ciso646>
+#include <climits>
+#include <clocale>
+#include <cmath>
+#include <csetjmp>
+#include <csignal>
+#include <cstdarg>
+#include <cstddef>
 #include <cstdio>
 #include <cstdlib>
-#include <algorithm>
-#include <cmath>
-#include <vector>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <queue>
-#include <ctime>
-#include <cassert>
-#include <complex>
-#include <string>
 #include <cstring>
-#include <chrono>
-#include <random>
+#include <ctime>
+
+#if __cplusplus >= 201103L
+#include <ccomplex>
+#include <cfenv>
+#include <cinttypes>
+#include <cstdbool>
+#include <cstdint>
+#include <ctgmath>
+#include <cwchar>
+#include <cwctype>
+#endif
+
+
+#include <algorithm>
 #include <bitset>
+#include <complex>
+#include <deque>
+#include <exception>
+#include <fstream>
+#include <functional>
+#include <iomanip>
+#include <ios>
+#include <iosfwd>
+#include <iostream>
+#include <istream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <locale>
+#include <map>
+#include <memory>
+#include <new>
+#include <numeric>
+#include <ostream>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <stdexcept>
+#include <streambuf>
+#include <string>
+#include <typeinfo>
+#include <utility>
+#include <valarray>
+#include <vector>
+
+#if __cplusplus >= 201103L
 #include <array>
+#include <atomic>
+#include <chrono>
+#include <condition_variable>
+#include <forward_list>
+#include <future>
+#include <initializer_list>
+#include <mutex>
+#include <random>
+#include <ratio>
+#include <regex>
+#include <scoped_allocator>
+#include <system_error>
+#include <thread>
+#include <tuple>
+#include <typeindex>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
+#endif
+
 using namespace std;
-
-//#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/                                                     
-                                                                                                                        
-#ifndef ONLINE_JUDGE                                                                                                    
-ifstream  i_data("data.in");                                                                                            
-ofstream  o_data("data.out");                                                                                           
-#define cin  i_data                                                                                                     
-#define cout o_data                                                                                                     
-#else                                                                                                                   
-#endif 
-
 #define ENABLEFASTIO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 
 /**********************************************************************************************************************/
 
+
 #define endl "\n"
 #define int long long
+#define double long double
 
-// Some basic typedef's for comfort
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<pii> vii;
 
-// #defines for bounds comfort
-#define double long double
 
-// #defines for comfort
+/**********************************************************************************************************************/
+
 #define f first
 #define s second
 #define mp make_pair
 #define pb push_back
 #define eb emplace_back
-
-// Binary Search comforts
 #define lb lower_bound
 #define ub upper_bound
 
-// Debugging related comforts
+/**********************************************************************************************************************/
+
 #define debug(x) cout << #x << " is " << x << endl
 #define  mset(a,x)      memset(a,x,sizeof(a))
 #define  debv(a)        for(auto it: a)cout<<it<<" ";newl;
@@ -85,11 +144,11 @@ typedef vector<pii> vii;
 #define  deb3(a,b,c)    cout<<a<<" "<<b<<" "<<c<<"\n";
 #define  deb4(a,b,c,d)  cout<<a<<" "<<b<<" "<<c<<" "<<d<<"\n";
 
-// MIN-MAX Customizations
-#define min(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var0 : __var1; })
-#define max(x,y) ({ __typeof__(x) __var0 = x; __typeof__(y) __var1 = y; __var0 < __var1 ? __var1 : __var0; })
+
+/**********************************************************************************************************************/
 
 // Traversal related Comforts
+
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
 #define trav(a, x) for(auto& a : x)
 #define all(x) x.begin(), x.end()
@@ -101,6 +160,7 @@ typedef vector<pii> vii;
 #define cpresent(container, element) (find(all(container), element) != container.end())
    
 
+/**********************************************************************************************************************/
 
 // Templates
 template < typename T1, typename T2 > struct pair {
@@ -121,6 +181,7 @@ vector<int> sieve(int n)
         }
     return vect;
 }
+
 ll gcd(ll a, ll b) {
     if (b > a) {
         return gcd(b, a);
@@ -200,8 +261,16 @@ std::vector<T> slices(std::vector<T> const &v, int m, int n)
 }
 
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
-/**********************************************************************************************************************/
 
+#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/                                                     
+                                                                                                                        
+#ifndef ONLINE_JUDGE                                                                                                    
+ifstream  i_data("data.in");                                                                                            
+ofstream  o_data("data.out");                                                                                           
+#define cin  i_data                                                                                                     
+#define cout o_data                                                                                                     
+#else                                                                                                                   
+#endif 
 
 void solve()
 {
