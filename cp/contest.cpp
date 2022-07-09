@@ -5,12 +5,13 @@
  * Last Modified Date: 07.07.2022
  * Last Modified By  : cppygod
  */
+
 /*
     செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
     Focus, Determination and Sheer-Will
-    The woods are lovely, dark and deep,   
-    But I have promises to keep,   
-    And miles to go before I sleep,   
+    The woods are lovely, dark and deep,
+    But I have promises to keep,
+    And miles to go before I sleep,
     And miles to go before I sleep.
 
     -------------------------------------------------------------------------
@@ -84,6 +85,7 @@
 #include <utility>
 #include <valarray>
 #include <vector>
+#include <sys/stat.h>
 
 #if __cplusplus >= 201103L
 #include <array>
@@ -156,7 +158,7 @@ typedef vector<pii> vii;
 #define  uniq(a)  a.resize(unique(a.begin(), a.end()) - a.begin());
 #define present(container, element) (container.find(element) != container.end())
 #define cpresent(container, element) (find(all(container), element) != container.end())
-   
+
 
 /**********************************************************************************************************************/
 
@@ -182,23 +184,23 @@ vector<int> sieve(int n)
     return vect;
 }
 
-ll gcd(ll a, ll b) 
+ll gcd(ll a, ll b)
 {
-    if (b > a) 
+    if (b > a)
     {
         return gcd(b, a);
     }
-    if (b == 0) 
+    if (b == 0)
     {
         return a;
     }
     return gcd(b, a % b);
 }
 
-ll expo(ll a, ll b, ll mod) 
+ll expo(ll a, ll b, ll mod)
 {
     ll res = 1;
-    while (b > 0) 
+    while (b > 0)
     {
         if (b & 1)res = (res * a) % mod;
         a = (a * a) % mod;
@@ -207,7 +209,7 @@ ll expo(ll a, ll b, ll mod)
     return res;
 }
 
-void extendgcd(ll a, ll b, ll*v) 
+void extendgcd(ll a, ll b, ll*v)
 {
     if (b == 0) {
         v[0] = 1;    //pass an arry of size 3
@@ -222,12 +224,12 @@ void extendgcd(ll a, ll b, ll*v)
     return;
 }
 
-bool revsort(ll a, ll b) 
+bool revsort(ll a, ll b)
 {
     return a > b;
 }
 
-void swap(int &x, int &y) 
+void swap(int &x, int &y)
 {
     int temp = x;
     x = y;
@@ -260,15 +262,38 @@ std::vector<T> slices(std::vector<T> const &v, int m, int n)
 
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 
-#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/                                                     
-                                                                                                                        
-#ifndef ONLINE_JUDGE                                                                                                    
-ifstream  i_data("data.in");                                                                                            
-ofstream  o_data("data.out");                                                                                           
-#define cin  i_data                                                                                                     
-#define cout o_data                                                                                                     
-#else                                                                                                                   
-#endif 
+#define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
+
+#ifndef ONLINE_JUDGE
+ifstream  i_data("data.in");
+ofstream  o_data("data.out");
+#define cin  i_data
+#define cout o_data
+#else
+#endif
+
+inline bool exists_test3 (const std::string& name)
+{
+    struct stat buffer;
+    return (stat (name.c_str(), &buffer) == 0);
+}
+
+void debug3()
+{
+    if(exists_test3("data.in"))
+    {
+        cout << "*********************************" << endl;
+    }
+}
+
+void debug2()
+{
+    if(exists_test3("data.in"))
+    {
+        cout << "---------------------------------" << endl;
+    }
+}
+
 
 void solve()
 {
