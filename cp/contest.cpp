@@ -1,11 +1,10 @@
 /**
- * File              : contest.cpp
+ * File              : check_file_op.cpp
  * Author            : cppygod
  * Date              : 07.07.2022
- * Last Modified Date: 07.07.2022
+ * Last Modified Date: 09.07.2022
  * Last Modified By  : cppygod
  */
-
 /*
     செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
     Focus, Determination and Sheer-Will
@@ -113,7 +112,7 @@ using namespace std;
 #define ENABLEFASTIO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 
 /**********************************************************************************************************************/
-
+// Type related comforts
 
 #define endl "\n"
 #define int long long
@@ -127,6 +126,7 @@ typedef vector<pii> vii;
 
 
 /**********************************************************************************************************************/
+// Some short-hands
 
 #define f first
 #define s second
@@ -137,8 +137,51 @@ typedef vector<pii> vii;
 #define ub upper_bound
 
 /**********************************************************************************************************************/
+// Frequently used for debugging
 
-#define debug(x) cout << #x << " is " << x << endl
+inline bool fileExists (const std::string& name)
+{
+    struct stat buffer;
+    return (stat (name.c_str(), &buffer) == 0);
+}
+
+template<typename T>
+void print(std::vector<T> const &v)
+{
+    if(fileExists("data.in"))
+    {
+        for (auto i: v) {
+            cout << i << ' ';
+        }
+        cout << endl;
+    }
+}
+
+template<typename T>
+void debug(const T& msg)
+{
+    if(fileExists("data.in"))
+    {
+        cout << msg << endl;
+    }
+}
+
+void debug2()
+{
+    if(fileExists("data.in"))
+    {
+        cout << "---------------------------------" << endl;
+    }
+}
+
+void debug3()
+{
+    if(fileExists("data.in"))
+    {
+        cout << "*********************************" << endl;
+    }
+}
+
 #define  mset(a,x)      memset(a,x,sizeof(a))
 #define  debv(a)        for(auto it: a)cout<<it<<" ";newl;
 #define  deb1(a)        cout<<a<<"\n";
@@ -161,13 +204,21 @@ typedef vector<pii> vii;
 
 
 /**********************************************************************************************************************/
-
-// Templates
+// Template Sections
 
 template < typename T1, typename T2 > struct pair {
     T1 first;
     T2 second;
 };
+
+template<typename T>
+std::vector<T> slices(std::vector<T> const &v, int m, int n)
+{
+    auto first = v.cbegin() + m;
+    auto last = v.cbegin() + n + 1;
+    std::vector<T> vec(first, last);
+    return vec;
+}
 
 /*********************************************FREQUENTLY USED SUBROUTINES *********************************************/
 
@@ -241,25 +292,6 @@ bool sortBySecond(const std::pair<int,int> &a, const std::pair<int,int> &b)
     return (a.second < b.second);
 }
 
-template<typename T>
-void print(std::vector<T> const &v)
-{
-    for (auto i: v)
-    {
-        cout << i << ' ';
-    }
-    cout << endl;
-}
-
-template<typename T>
-std::vector<T> slices(std::vector<T> const &v, int m, int n)
-{
-    auto first = v.cbegin() + m;
-    auto last = v.cbegin() + n + 1;
-    std::vector<T> vec(first, last);
-    return vec;
-}
-
 /********************************************END OF CUSTOMIZATIONS*****************************************************/
 
 #define ONLINE_JUDGE   /* IF not ONLINE_JUDGE Comment this line*/
@@ -272,38 +304,23 @@ ofstream  o_data("data.out");
 #else
 #endif
 
-inline bool exists_test3 (const std::string& name)
-{
-    struct stat buffer;
-    return (stat (name.c_str(), &buffer) == 0);
-}
-
-void debug3()
-{
-    if(exists_test3("data.in"))
-    {
-        cout << "*********************************" << endl;
-    }
-}
-
-void debug2()
-{
-    if(exists_test3("data.in"))
-    {
-        cout << "---------------------------------" << endl;
-    }
-}
-
 
 void solve()
 {
+    debug("In Solve function");
 
+}
+
+void main2()
+{
+    solve();
+    debug2();
 }
 
 int32_t main()
 {
     ENABLEFASTIO();
     int T = 1;
-    while(T--) solve();
+    while(T--) main2();
     return 0;
 }
