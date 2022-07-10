@@ -2,7 +2,7 @@
 Log-Watcher
 """
 
-import os
+import ubuntu
 import time
 import subprocess
 from optparse import OptionParser
