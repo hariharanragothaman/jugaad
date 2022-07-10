@@ -16,6 +16,7 @@ from functools import reduce
 # FASTIO REGION
 BUFSIZE = 8192
 
+
 class FastIO(IOBase):
     newlines = 0
 

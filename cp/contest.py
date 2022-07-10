@@ -16,6 +16,7 @@ from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
 from functools import reduce
 
+
 # SOME GENERAL HELPER
 def input_as_array():
     return list(map(int, input().split()))
