@@ -1,10 +1,11 @@
 /**
- * File              : check_file_op.cpp
+ * File              : contest_bits.cpp
  * Author            : cppygod
  * Date              : 07.07.2022
  * Last Modified Date: 09.07.2022
  * Last Modified By  : cppygod
  */
+
 /*
     செயல் பேசும் ஆழம் இங்கே சொற்கள் பேசுமா?
     Focus, Determination and Sheer-Will
@@ -26,7 +27,7 @@
 #include "bits/stdc++.h"
 #include <sys/stat.h>
 using namespace std;
-#define ENABLEFASTIO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define ENABLE_FAST_IO() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 
 /**********************************************************************************************************************/
 // Type related comforts
@@ -41,18 +42,6 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<pii> vii;
 
-
-/**********************************************************************************************************************/
-// Some short-hands
-
-#define f first
-#define s second
-#define mp make_pair
-#define pb push_back
-#define eb emplace_back
-#define lb lower_bound
-#define ub upper_bound
-
 /**********************************************************************************************************************/
 // Frequently used for debugging
 
@@ -66,10 +55,8 @@ template<typename T>
 void print(std::vector<T> const &v)
 {
     if(fileExists("data.in"))
-    {
-        for (auto i: v) {
+        for (auto i: v)
             cout << i << ' ';
-        }
         cout << endl;
     }
 }
@@ -78,25 +65,19 @@ template<typename T>
 void debug(const T& msg)
 {
     if(fileExists("data.in"))
-    {
         cout << msg << endl;
-    }
 }
 
 void debug2()
 {
     if(fileExists("data.in"))
-    {
         cout << "---------------------------------" << endl;
-    }
 }
 
 void debug3()
 {
     if(fileExists("data.in"))
-    {
         cout << "*********************************" << endl;
-    }
 }
 
 #define  mset(a,x)      memset(a,x,sizeof(a))
@@ -236,7 +217,7 @@ void main2()
 
 int32_t main()
 {
-    ENABLEFASTIO();
+    ENABLE_FAST_IO();
     int T = 1;
     while(T--) main2();
     return 0;
