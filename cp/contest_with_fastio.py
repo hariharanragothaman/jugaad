@@ -8,7 +8,12 @@ from collections import deque, Counter, OrderedDict, defaultdict
 from heapq import nsmallest, nlargest, heapify, heappop, heappush, heapreplace
 from math import ceil, floor, log, log2, sqrt, gcd, factorial, pow, pi
 from bisect import bisect_left, bisect_right
-from itertools import accumulate, permutations, combinations, combinations_with_replacement
+from itertools import (
+    accumulate,
+    permutations,
+    combinations,
+    combinations_with_replacement,
+)
 from io import BytesIO, IOBase
 from functools import reduce
 
@@ -89,13 +94,15 @@ input = lambda: sys.stdin.readline().rstrip("\r\n")
 def input_as_array():
     return list(map(int, input().split()))
 
+
 def factors(n):
     return set(
         reduce(
             list.__add__,
-            ([i, n // i] for i in range(1, int(n ** 0.5) + 1) if n % i == 0),
+            ([i, n // i] for i in range(1, int(n**0.5) + 1) if n % i == 0),
         )
     )
+
 
 ############################### SOLUTION BEGINS HERE ######################################
 
